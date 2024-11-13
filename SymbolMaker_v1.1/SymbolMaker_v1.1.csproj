@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9E1F461D-D315-4439-9412-78702AABF56E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SymbolMaker</RootNamespace>
+    <AssemblyName>SymbolMaker</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SM4_Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\BringToFrontCommand.cs" />
+    <Compile Include="Commands\CommandManager.cs" />
+    <Compile Include="Commands\DeleteShapeCommand.cs" />
+    <Compile Include="Commands\DuplicateShapeCommand.cs" />
+    <Compile Include="Commands\EditShapeCommand.cs" />
+    <Compile Include="Commands\EditSymbolNameCommand.cs" />
+    <Compile Include="Commands\EditSymConNameCommand.cs" />
+    <Compile Include="Commands\EditTextCommand.cs" />
+    <Compile Include="Commands\FlipShapeCommand.cs" />
+    <Compile Include="Commands\GroupShapeCommand.cs" />
+    <Compile Include="Commands\HideConnectionCommand.cs" />
+    <Compile Include="Commands\RotateShapeCommand.cs" />
+    <Compile Include="Commands\SendToBackCommand.cs" />
+    <Compile Include="Commands\ShowConnectionCommand.cs" />
+    <Compile Include="Commands\UngroupShapeCommand.cs" />
+    <Compile Include="Controls\HatchingComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Commands\AddShapeCommand.cs" />
+    <Compile Include="HelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpForm.Designer.cs">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="InputForms\CreateSymbolForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputForms\CreateSymbolForm.Designer.cs">
+      <DependentUpon>CreateSymbolForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputForms\EditSymbolForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputForms\EditSymbolForm.Designer.cs">
+      <DependentUpon>EditSymbolForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FontControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FontControl.designer.cs">
+      <DependentUpon>FontControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\MoveShapeCommand.cs" />
+    <Compile Include="Commands\ResizeShapeCommand.cs" />
+    <Compile Include="Shapes\DotShape.cs" />
+    <Compile Include="Utility\GraphExtension.cs" />
+    <Compile Include="Vector\HelperClass.cs" />
+    <Compile Include="Controls\LineStyleComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utility\CreateCursor.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shapes\GroupShape.cs" />
+    <Compile Include="Language\LanguageHelper.cs" />
+    <Compile Include="Shapes\ShapeBase.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="InputForms\EditShapesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputForms\EditShapesForm.Designer.cs">
+      <DependentUpon>EditShapesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shapes\ArcShape.cs" />
+    <Compile Include="Shapes\ConnectionShape.cs" />
+    <Compile Include="Shapes\EllipseShape.cs" />
+    <Compile Include="Utility\FontInfo.cs" />
+    <Compile Include="Shapes\LineShape.cs" />
+    <Compile Include="Shapes\PolygonShape.cs" />
+    <Compile Include="Shapes\RectangleShape.cs" />
+    <Compile Include="Shapes\ShapeUtil.cs" />
+    <Compile Include="Shapes\SymbolShape.cs" />
+    <Compile Include="Shapes\TextShape.cs" />
+    <Compile Include="InputForms\TextInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputForms\TextInputForm.designer.cs">
+      <DependentUpon>TextInputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vector\PointV2D.cs" />
+    <Compile Include="Utility\XmlHelper.cs" />
+    <EmbeddedResource Include="HelpForm.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputForms\CreateSymbolForm.resx">
+      <DependentUpon>CreateSymbolForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputForms\EditSymbolForm.resx">
+      <DependentUpon>EditSymbolForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FontControl.resx">
+      <DependentUpon>FontControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="InputForms\EditShapesForm.resx">
+      <DependentUpon>EditShapesForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputForms\TextInputForm.resx">
+      <DependentUpon>TextInputForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Properties\app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MyCursors\ArcCursor.png" />
+    <Content Include="MyCursors\CenterArcCursor.png" />
+    <Content Include="MyCursors\CircleCursor.png" />
+    <Content Include="MyCursors\EllipseCursor.png" />
+    <Content Include="MyCursors\LineCursor.png" />
+    <Content Include="MyCursors\PolyCursor.png" />
+    <Content Include="MyCursors\RectCursor.png" />
+    <Content Include="SM4_Icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
